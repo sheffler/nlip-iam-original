@@ -87,13 +87,20 @@ Note: these last two require registering a private key with the authentication s
 	$ openssl genrsa -out oidc.key 4096
 
 
+![Register an Application](./pictures/register-application-01.png)
+
 ## See registered applications
 
-	http://127.0.0.1/9000/o/applications/
+	http://127.0.0.1:9000/o/applications/
 	
+![Applications Listing](./pictures/applications-listing-01.png)
+
+
 ## Use the Admin interface
 
 You can use the Admin interface at http://127.00.0.1:9000/admin/ to create and delete users and look at other data in the system.
+
+![Admin Interface](./pictures/django-admin-page01.png)
 
 ## Test this server
 
@@ -108,8 +115,7 @@ Use the assocated project, "nlip-iam-test" to see if you can log in and authoriz
 
 Use the "cleartokens" command periodically to clean up expired tokens.
 
-    $ python manage.py shell
-	cleartokens
+    $ python manage.py cleartokens
 
 ## References
 
@@ -117,4 +123,5 @@ https://django-oauth-toolkit.readthedocs.io/en/latest/getting_started.html
 
 https://django-oauth-toolkit.readthedocs.io/en/latest/tutorial/tutorial_01.html#scenario
 
-https://n2ygk-testing-dot.readthedocs.io/en/latest/oidc.html
+https://django-oauth-toolkit.readthedocs.io/en/latest/oidc.html
+
