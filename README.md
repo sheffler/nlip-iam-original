@@ -22,7 +22,7 @@ Make sure you have python3 installed on your system.
 
 2. Install the requirements
 
-        $ pip install -r requirements
+        $ pip install -r requirements.txt
 
     You should see Django, oauthlib and other modules being installed.
 	
@@ -81,7 +81,7 @@ This will be the URI of the test application we will describe later.
 
 To enable JWT and OPEN ID CONNECT (OIDC) select "RSA with SHA-2 256" in the drop-down box.
 
-Note: these last two require registering a private key with the authentication server.  Note that we have already provided on in the file `nlip/oidc.key` and have included it in the settings in `nlip/oidc.key`.  If you would like to replace this key you can generate one this way.
+>. Note: these last two require registering a private key with the authentication server.  We have already provided one in the file `nlip/oidc.key` and have included it in the settings in `nlip/oidc.key`.  If you would like to replace this key you can generate one this way.
 
     $ cd nlipiam
 	$ openssl genrsa -out oidc.key 4096
@@ -109,6 +109,8 @@ Use the assocated project, "nlip-iam-test" to see if you can log in and authoriz
 ## Caveats
 
 * localhost and 127.0.0.1 are different in the context of the "redirect_uri".  When the Oauth server receives an authentication request from an Application, it will use the Client ID to look up the "redirect_uri", and if it does not match exactly the client will be rejected.
+
+* Care should be taken before running this project in production on a public IP for managing secrets appropriately.
 
 
 ## Maintenance
